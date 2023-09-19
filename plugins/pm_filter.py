@@ -90,8 +90,8 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-#@Client.on_message((filters.group | filters.private) & filters.text & filters.incoming)
-@Client.on_message(filters.group & filters.text & filters.incoming)
+@Client.on_message((filters.group | filters.private) & filters.text & filters.incoming)
+# @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     if message.chat.id != SUPPORT_CHAT_ID:
         glob = await global_filters(client, message)
@@ -131,10 +131,7 @@ async def pm_text(bot, message):
         return  # ignore commands and hashtags
     if user_id in ADMINS:
         return  # ignore admins
-        await message.reply_text(
-            "<b>ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/+6BDhcNRM7DwzOGU1")]])
-        ) </b>")
+    await message.reply_text("<b>Yᴏᴜʀ ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴇɴᴛ ᴛᴏ ᴍʏ ᴍᴏᴅᴇʀᴀᴛᴏʀs !</b>")
     await bot.send_message(
         chat_id=LOG_CHANNEL,
         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>",
@@ -1023,7 +1020,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                     [
                                         InlineKeyboardButton(
                                             "⚜️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ 🔱",
-                                            url="https://t.me/kannada_movie_requestz_2023",
+                                            url="https://t.me/kannada_movie_request_backup",
                                         )
                                     ],
                                 ]
@@ -1137,7 +1134,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ],
                     [
                         InlineKeyboardButton(
-                            "⚜️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ 🔱", url="https://t.me/kannada_movie_requestz_2023"
+                            "⚜️ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ 🔱", url="https://t.me/kannada_movie_request_backup"
                         )
                     ],
                 ]
@@ -1209,7 +1206,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.message.edit_text(
                     f"<b>Pʀᴏᴄᴇss Cᴏᴍᴘʟᴇᴛᴇᴅ ғᴏʀ ғɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ !\n\nSᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ {str(deleted)} ғɪʟᴇs ғʀᴏᴍ DB ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {keyword}.</b>"
                 )
-    elif query.data.startswith("killfileskannada_movie_requestz_2023"):
+    elif query.data.startswith("killfileskannada_movie_request_backup"):
         ident, pattern = query.data.split("#")
         await query.message.edit_text(
             f"<b>Fᴇᴛᴄʜɪɴɢ Fɪʟᴇs ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ `sᴇʀɪᴇs ғɪʟᴇs` ᴏɴ DB... Pʟᴇᴀsᴇ ᴡᴀɪᴛ...</b>"
@@ -1972,7 +1969,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         btn = [
             [
                 InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/kannada_movie_requestz_2023"),
+                InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="t.me/kannada_movie_request_backup"),
             ]
         ]
         await client.edit_message_media(
