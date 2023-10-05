@@ -1698,45 +1698,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(MSG_ALRT)
 
     elif query.data == "filters":
-        buttons = [
-            [
-                InlineKeyboardButton("Mᴀɴᴜᴀʟ FIʟᴛᴇʀ", callback_data="manuelfilter"),
-                InlineKeyboardButton("Aᴜᴛᴏ FIʟᴛᴇʀ", callback_data="autofilter"),
-            ],
-            [
-                InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
-                InlineKeyboardButton("Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs", callback_data="global_filters"),
-            ],
-        ]
-
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id,
-            query.message.id,
-            InputMediaPhoto(random.choice(PICS)),
-        )
-        await query.message.edit_text(
-            text=script.ALL_FILTERS.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML,
-        )
-
-    elif query.data == "global_filters":
-        buttons = [[InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="filters")]]
-        await client.edit_message_media(
-            query.message.chat.id,
-            query.message.id,
-            InputMediaPhoto(random.choice(PICS)),
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.GFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML,
-        )
-
-    elif query.data == "help":
-        buttons =[[
+        buttons = [[
     InlineKeyboardButton('Mungaru Male', switch_inline_query_current_chat='Mungaru Male'),
     InlineKeyboardButton('Lucia', switch_inline_query_current_chat='Lucia'),
     InlineKeyboardButton('Rangitaranga', switch_inline_query_current_chat='Rangitaranga')
@@ -1902,9 +1864,50 @@ async def cb_handler(client: Client, query: CallbackQuery):
     InlineKeyboardButton('Krishna Leela', switch_inline_query_current_chat='Krishna Leela')
 ],
 [
-    InlineKeyboardButton('Seetharama Kalyana', switch_inline_query_current_chat='Seetharama Kalyana')
+    InlineKeyboardButton('Seetharama Kalyana', switch_inline_query_current_chat='Seetharama Kalyana')],
+[
+    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
+    InlineKeyboardButton("Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs", callback_data="global_filters"),
+
 ]]
 
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id,
+            query.message.id,
+            InputMediaPhoto(random.choice(PICS)),
+        )
+        await query.message.edit_text(
+            text=script.ALL_FILTERS.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML,
+        )
+
+    elif query.data == "global_filters":
+        buttons = [[InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="filters")]]
+        await client.edit_message_media(
+            query.message.chat.id,
+            query.message.id,
+            InputMediaPhoto(random.choice(PICS)),
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.GFILTER_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML,
+        )
+
+    elif query.data == "help":
+        buttons =buttons = [[
+            InlineKeyboardButton('FIʟᴛᴇʀs', callback_data='filters'),
+            InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
+        ], [
+            InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
+            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅs', callback_data='extra')
+        ], [
+            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id,
