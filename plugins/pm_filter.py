@@ -1736,20 +1736,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
 
     elif query.data == "help":
-        buttons = [
-            [
-                InlineKeyboardButton("FIʟᴛᴇʀs", callback_data="filters"),
-                InlineKeyboardButton("Fɪʟᴇ Sᴛᴏʀᴇ", callback_data="store_file"),
-            ],
-            [
-                InlineKeyboardButton("Cᴏɴɴᴇᴄᴛɪᴏɴ", callback_data="coct"),
-                InlineKeyboardButton("Exᴛʀᴀ Mᴏᴅs", callback_data="extra"),
-            ],
-            [
-                InlineKeyboardButton("Hᴏᴍᴇ", callback_data="start"),
-                InlineKeyboardButton("Sᴛᴀᴛᴜs", callback_data="stats"),
-            ],
-        ]
+        buttons = [[
+                    InlineKeyboardButton('1', switch_inline_query_current_chat='Good Night'),
+                    InlineKeyboardButton('2', switch_inline_query_current_chat='Vikipedia'),
+                    InlineKeyboardButton('3', switch_inline_query_current_chat='Oru Nalla Naal Paathu')
+        ],[
+                    InlineKeyboardButton('4', switch_inline_query_current_chat='Shaakuntalam'),
+                    InlineKeyboardButton('5', switch_inline_query_current_chat='Wolfhound'),
+                    InlineKeyboardButton('6', switch_inline_query_current_chat='Anuragam')
+        ],[
+                    InlineKeyboardButton('7', switch_inline_query_current_chat='Sankarabharanam'),
+                    InlineKeyboardButton('8', switch_inline_query_current_chat='WOW'),
+                    InlineKeyboardButton('9', switch_inline_query_current_chat='Savitri')
+        ],[
+                    InlineKeyboardButton('10', switch_inline_query_current_chat='Uncharted'),
+                    InlineKeyboardButton('11', switch_inline_query_current_chat='Thandatti'),
+                    InlineKeyboardButton('12', switch_inline_query_current_chat='')
+        ],[
+                    InlineKeyboardButton('13', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('14', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('15', switch_inline_query_current_chat='')
+        ],[
+                    InlineKeyboardButton(text="❌️𝖢𝗅𝗈𝗌𝖾❌️", callback_data="close_data")
+                  ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
