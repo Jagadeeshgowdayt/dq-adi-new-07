@@ -43,7 +43,6 @@ from info import (
     SPELL_CHECK_REPLY,
     IMDB_TEMPLATE,
     NO_RESULTS_MSG,
-    IS_VERIFY,
     HOW_TO_VERIFY,
 )
 from pyrogram.types import (
