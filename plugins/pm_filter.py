@@ -1699,6 +1699,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "filters":
         buttons = [[
+    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="filters"),
+    InlineKeyboardButton("Bᴜᴛᴛᴏɴs", callback_data="button")
+],
     InlineKeyboardButton('Mungaru Male', switch_inline_query_current_chat='Mungaru Male'),
     InlineKeyboardButton('Lucia', switch_inline_query_current_chat='Lucia'),
     InlineKeyboardButton('Rangitaranga', switch_inline_query_current_chat='Rangitaranga')
@@ -1867,7 +1870,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     InlineKeyboardButton('Seetharama Kalyana', switch_inline_query_current_chat='Seetharama Kalyana')],
 [
     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
-    InlineKeyboardButton("Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs", callback_data="global_filters"),
+    InlineKeyboardButton("Gʟᴏʙᴀʟ Fɪʟᴛᴇʀs", callback_data="global_filters")
 
 ]]
 
