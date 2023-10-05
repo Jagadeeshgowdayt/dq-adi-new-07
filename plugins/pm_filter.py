@@ -1701,7 +1701,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="filters"),
     InlineKeyboardButton("Bᴜᴛᴛᴏɴs", callback_data="button")
-],
+],[
     InlineKeyboardButton('Mungaru Male', switch_inline_query_current_chat='Mungaru Male'),
     InlineKeyboardButton('Lucia', switch_inline_query_current_chat='Lucia'),
     InlineKeyboardButton('Rangitaranga', switch_inline_query_current_chat='Rangitaranga')
